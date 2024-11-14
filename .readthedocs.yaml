@@ -7,3 +7,7 @@ build:
   os: "ubuntu-20.04"
   tools:
     python: "mambaforge-latest"
+  jobs:
+    post_create_environment:
+      - micromamba info
+      - micromamba list
