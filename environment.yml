@@ -1,9 +1,0 @@
-name: pooch_rtd_issue
-channels:
-  - conda-forge
-  - nodefaults
-dependencies:
-  - python >=3.10,<3.12
-  - requests
-  - sphinx
-  - sphinx-rtd-theme
