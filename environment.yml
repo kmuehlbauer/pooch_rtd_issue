@@ -6,4 +6,4 @@ dependencies:
   - python >=3.10,<3.12
   - pip
   - sphinx <7.0
-  - open-radar-data>=0.1.0
+  - pooch
