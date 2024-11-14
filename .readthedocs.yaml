@@ -1,13 +1,13 @@
 version: "2"
 
-conda:
-  environment: environment.yml
-
 build:
   os: "ubuntu-22.04"
   tools:
-    python: "mambaforge-latest"
-  jobs:
-    post_create_environment:
-      - mamba info
-      - mamba list
+    python: "3.10"
+
+python:
+  install:
+    - requirements: docs/requirements.txt
+
+sphinx:
+  configuration: docs/source/conf.py
