@@ -1,0 +1,9 @@
+name: pooch_rtd_issue
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python >=3.10,<3.13
+  - pip
+  - sphinx
+  - open-radar-data>=0.1.0
