@@ -2,6 +2,8 @@
 
 # -- Project information
 
+from open_radar_data import DATASETS
+
 project = 'Lumache'
 copyright = '2021, Graziella'
 author = 'Graziella'
@@ -33,3 +35,5 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+fname = DATASETS.fetch("cfrad.20080604_002217_000_SPOL_v36_SUR.nc")
