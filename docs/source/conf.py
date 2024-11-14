@@ -38,7 +38,7 @@ html_theme = 'sphinx_rtd_theme'
 epub_show_urls = 'footnote'
 
 output_file = open("output_file.nc", "w+b")
-url = "https://github.com/readthedocs/readthedocs.org/blob/main/docs/dev/code-of-conduct.rst"
+url = "https://github.com/readthedocs/readthedocs.org/raw/refs/heads/main/docs/dev/code-of-conduct.rst"
 print("downloading: ", url)
 try:
     response = requests.get(url, timeout=30, allow_redirects=True)
