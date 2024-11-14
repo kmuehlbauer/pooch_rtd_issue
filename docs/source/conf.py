@@ -40,6 +40,7 @@ epub_show_urls = 'footnote'
 output_file = open("output_file.nc", "w+b")
 kwargs = {}
 kwargs.setdefault("stream", True)
+url = "https://github.com/openradar/open-radar-data/raw/main/data/cfrad.20080604_002217_000_SPOL_v36_SUR.nc"
 try:
     response = requests.get(url, timeout=30, **kwargs)
     response.raise_for_status()
