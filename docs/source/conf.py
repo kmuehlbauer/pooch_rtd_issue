@@ -2,7 +2,7 @@
 
 # -- Project information
 
-import pooch
+# import pooch
 import requests
 
 project = 'Lumache'
@@ -45,13 +45,7 @@ url = "https://github.com/openradar/open-radar-data/raw/main/data/cfrad.20080604
 try:
     response = requests.get(url, timeout=30, **kwargs)
     response.raise_for_status()
-    content = response.iter_content(chunk_size=1024)
-    total = int(response.headers.get("content-length", 0))
-    output_file.write(content)
-    for chunk in content:
-        if chunk:
-            output_file.write(chunk)
-            output_file.flush()
+    output_file.write(response.content)
 finally:
     output_file.close()
-fname = pooch.retrieve("https://github.com/openradar/open-radar-data/raw/main/data/cfrad.20080604_002217_000_SPOL_v36_SUR.nc", "67821b6c2bb0f27b5de49dee636f36e6e5bbad95f1ee168cb2d1af48e98992fe")
+# fname = pooch.retrieve("https://github.com/openradar/open-radar-data/raw/main/data/cfrad.20080604_002217_000_SPOL_v36_SUR.nc", "67821b6c2bb0f27b5de49dee636f36e6e5bbad95f1ee168cb2d1af48e98992fe")
