@@ -2,6 +2,9 @@
 
 # -- Project information
 
+import requests
+import subprocess 
+
 project = 'Lumache'
 copyright = '2021, Graziella'
 author = 'Graziella'
@@ -33,3 +36,16 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+output_file = open("output_file.nc", "w+b")
+url = "https://github.com/readthedocs/readthedocs.org/raw/refs/heads/main/docs/dev/code-of-conduct.rst"
+print("downloading: ", url)
+try:
+    response = requests.get(url, timeout=30, allow_redirects=True)
+    response.raise_for_status()
+    output_file.write(response.content)
+finally:
+    output_file.close()
+
+
+subprocess.run(["ls", "-l"])
