@@ -2,7 +2,6 @@
 
 # -- Project information
 
-# import pooch
 import requests
 
 project = 'Lumache'
@@ -38,14 +37,10 @@ html_theme = 'sphinx_rtd_theme'
 epub_show_urls = 'footnote'
 
 output_file = open("output_file.nc", "w+b")
-kwargs = {}
-#kwargs.setdefault("stream", True)
-kwargs["allow_redirects"] = True
-url = "https://github.com/openradar/open-radar-data/raw/main/data/cfrad.20080604_002217_000_SPOL_v36_SUR.nc"
+url = "https://github.com/readthedocs/readthedocs.org/blob/main/docs/dev/code-of-conduct.rst"
 try:
-    response = requests.get(url, timeout=30, **kwargs)
+    response = requests.get(url, timeout=30, allow_redirects=True)
     response.raise_for_status()
     output_file.write(response.content)
 finally:
     output_file.close()
-# fname = pooch.retrieve("https://github.com/openradar/open-radar-data/raw/main/data/cfrad.20080604_002217_000_SPOL_v36_SUR.nc", "67821b6c2bb0f27b5de49dee636f36e6e5bbad95f1ee168cb2d1af48e98992fe")
