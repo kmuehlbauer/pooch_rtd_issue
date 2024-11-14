@@ -2,7 +2,7 @@
 
 # -- Project information
 
-from open_radar_data import DATASETS
+import pooch
 
 project = 'Lumache'
 copyright = '2021, Graziella'
@@ -36,4 +36,4 @@ html_theme = 'sphinx_rtd_theme'
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
 
-fname = DATASETS.fetch("cfrad.20080604_002217_000_SPOL_v36_SUR.nc")
+fname = pooch.retrieve("https://github.com/openradar/open-radar-data/raw/main/data/cfrad.20080604_002217_000_SPOL_v36_SUR.nc", "67821b6c2bb0f27b5de49dee636f36e6e5bbad95f1ee168cb2d1af48e98992fe")
